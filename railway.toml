@@ -1,0 +1,16 @@
+[build]
+builder = "nixpacks"
+
+[[services]]
+name = "server"
+rootDirectory = "server"
+startCommand = "npm start"
+
+[services.variables]
+PORT = "4000"
+
+[[services]]
+name = "client"
+rootDirectory = "client"
+buildCommand = "npm install && npm run build"
+startCommand = "npx serve dist -p $PORT"
