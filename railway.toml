@@ -1,16 +1,5 @@
 [build]
-builder = "nixpacks"
+builder = "RAILPACK"
 
-[[services]]
-name = "server"
-rootDirectory = "server"
+[deploy]
 startCommand = "npm start"
-
-[services.variables]
-PORT = "4000"
-
-[[services]]
-name = "client"
-rootDirectory = "client"
-buildCommand = "npm install && npm run build"
-startCommand = "npx serve dist -p $PORT"
